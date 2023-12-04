@@ -1,6 +1,6 @@
 CREATE DATABASE db_ecommerce;
 
-USE db_ecommerce;
+USE tb_produtos;
 
 CREATE TABLE tb_produtos(
 id bigint AUTO_INCREMENT,
@@ -25,3 +25,5 @@ SELECT * FROM tb_produtos WHERE preco > 500.00;
 SELECT * FROM tb_produtos WHERE preco < 500.00;
 
 UPDATE tb_produtos SET estoque = 15 WHERE id = 2;
+
+SELECT nome, CONCAT('R$ ', FORMAT(preco, 2, 'pt_BR') ) AS preço FROM tb_produtos;
